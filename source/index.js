@@ -18,6 +18,15 @@ app.post("/users/register", function (req, res) {
   res.json({ code: 200, message: "User has been created." });
 });
 
+app.put("/login", function (req, res) {
+  var isLoginSuccess = handleLogin(req);
+  if (isLoginSuccess) {
+    res.json({ code: 200, message: "Login success." });
+  } else {
+    res.json({ code: 401, message: "Invalid credentials." });
+  }
+});
+
 function handleRegister(registerReq) {
   var user = {
     email: registerReq.body.email,
@@ -26,6 +35,19 @@ function handleRegister(registerReq) {
   };
 
   users.push(user);
+}
+
+function handleLogin(loginReq) {
+  var email = loginReq.body.email;
+  var password = loginReq.body.password;
+
+  for (var index = 0; index < users.length; index++) {
+    if (users[index].email === email && users[index].password === password) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 app.listen(4000);
