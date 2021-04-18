@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "name": "activity-11",
+  "description": "",
+  "version": "1.0.0",
+  "main": "source\\index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node source\\index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdonelli/activity-11.git"
+  },
+  "author": "sdonelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sdonelli/activity-11/issues"
+  },
+  "homepage": "https://github.com/sdonelli/activity-11#readme"
+}
