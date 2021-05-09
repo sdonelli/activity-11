@@ -25,6 +25,7 @@ app.put("/login", function (req, res) {
   if (isLoginSuccess) {
     res.json({ code: 200, message: "Login success." });
   } else {
+    res.status(401);
     res.json({ code: 401, message: "Invalid credentials." });
   }
 });
